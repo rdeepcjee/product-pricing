@@ -1,0 +1,182 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LocalProductPriceServiceImpl</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.golu.myretail.service</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LocalProductPriceServiceImpl (org.golu.myretail.service)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LocalProductPriceServiceImpl</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.2%
+  </span>
+  <span class="absValue">
+    (15/ 17)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$dHA1ZT8Z</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$IZvjIXtW</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$NWZCH8lM</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$Ot4sqdLh</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$RWCBIXsc</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$627866962$auxiliary$Xnf7cEdd</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$3Nku0LB9</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$HJwwhRn9</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$lC4WkKMv</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$MJ4uq2xM</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$q7DW7Y7F</td>
+  </tr>
+  <tr>
+    <td class="name">LocalProductPriceServiceImpl$MockitoMock$792494739$auxiliary$rHfVNlOO</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.2%
+  </span>
+  <span class="absValue">
+    (15/ 17)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.golu.myretail.service;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.golu.common.domain.CurrentPrice;
+<i>4</i>&nbsp;import org.golu.common.domain.ProductPrice;
+<i>5</i>&nbsp;import org.golu.myretail.exceptions.ResourceNotFoundException;
+<i>6</i>&nbsp;import org.golu.myretail.repository.ProductPriceRepository;
+<i>7</i>&nbsp;import org.golu.myretail.service.apis.LocalProductPriceService;
+<i>8</i>&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+<i>9</i>&nbsp;import org.springframework.stereotype.Service;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import javax.annotation.PostConstruct;
+<i>12</i>&nbsp;import java.util.Collection;
+<i>13</i>&nbsp;import java.util.List;
+<b class="fc"><i>14</i>&nbsp;import java.util.Optional;</b>
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;@Service(&quot;localProductPriceService&quot;)
+<b class="fc"><i>17</i>&nbsp;public class LocalProductPriceServiceImpl implements LocalProductPriceService {</b>
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    @Autowired
+<i>20</i>&nbsp;    private ProductPriceRepository repository;
+<b class="fc"><i>21</i>&nbsp;</b>
+<i>22</i>&nbsp;    @PostConstruct
+<i>23</i>&nbsp;    public void init() {
+<b class="fc"><i>24</i>&nbsp;        repository.saveAll(List.of(new ProductPrice(13860428, 13.49, &quot;USD&quot;),</b>
+<b class="fc"><i>25</i>&nbsp;                new ProductPrice(13860429, 14.39, &quot;USD&quot;),</b>
+<b class="nc"><i>26</i>&nbsp;                new ProductPrice(13860430, 19.43, &quot;USD&quot;)</b>
+<b class="fc"><i>27</i>&nbsp;        ));</b>
+<b class="nc"><i>28</i>&nbsp;    }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    @Override
+<i>31</i>&nbsp;    public ProductPrice findProductPrice(Integer id) {
+<b class="fc"><i>32</i>&nbsp;        Optional&lt;ProductPrice&gt; product = repository.findById(id);</b>
+<b class="fc"><i>33</i>&nbsp;</b>
+<i>34</i>&nbsp;        //If the product is not found, throw ResourceNotFoundException
+<b class="fc"><i>35</i>&nbsp;        if(!product.isPresent())</b>
+<b class="fc"><i>36</i>&nbsp;            throw new ResourceNotFoundException(String.format(&quot;Product with ID %d not found in cache data store&quot;, id));</b>
+<b class="fc"><i>37</i>&nbsp;</b>
+<b class="fc"><i>38</i>&nbsp;        return product.get();</b>
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;
+<i>41</i>&nbsp;    @Override
+<i>42</i>&nbsp;    public void updateProductPrice(Integer id, CurrentPrice price) {
+<b class="fc"><i>43</i>&nbsp;        repository.save(new ProductPrice(id, price.getValue(), price.getCurrencyCode()));</b>
+<b class="fc"><i>44</i>&nbsp;    }</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    @Override
+<i>47</i>&nbsp;    public Collection&lt;ProductPrice&gt; findProducts() {
+<b class="fc"><i>48</i>&nbsp;        return repository.findAll();</b>
+<i>49</i>&nbsp;    }
+<i>50</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-17 03:08</div>
+</div>
+</body>
+</html>

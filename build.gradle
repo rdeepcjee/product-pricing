@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+}
+
+group 'org.golu'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName="org.golu.Application"
+
+dependencies {
+
+    // JUnit 5
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.1.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.7.0'
+    testCompile group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.2.0'
+
+    // Spring Boot
+    compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.3.RELEASE') {
+        exclude group: 'com.fasterxml.jackson.core', module: 'jackson-databind'
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.3.3.RELEASE'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.3.3.RELEASE'
+
+    // Camel
+    compile group: 'org.apache.camel.springboot', name: 'camel-spring-boot-bom', version: '3.5.0'
+    compile group: 'org.apache.camel.springboot', name: 'camel-spring-boot-starter', version: '3.5.0'
+    compile group: 'org.apache.camel.springboot', name: 'camel-swagger-java-starter', version: '3.5.0'
+    compile group: 'org.apache.camel.springboot', name: 'camel-servlet-starter', version: '3.5.0'
+    compile group: 'org.apache.camel.springboot', name: 'camel-http-starter', version: '3.5.0'
+    compile group: 'org.apache.camel.springboot', name: 'camel-jackson-starter', version:'3.5.0'
+    testCompile group: 'org.apache.camel', name: 'camel-test-spring-junit5', version:'3.5.0'
+
+    // Embedded MongoDB
+    compile group: 'de.flapdoodle.embed', name: 'de.flapdoodle.embed.mongo', version:'1.50.5'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb'
+
+    // lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
+    // Swagger UI
+    compile group: 'org.webjars', name: 'swagger-ui', version: '2.2.10'
+    compile group: 'org.webjars', name: 'webjars-locator', version: '0.40'
+
+    // Mockito
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.21.0'
+    testCompile group: 'org.mockito', name: 'mockito-junit-jupiter', version: '2.23.0'
+}

@@ -1,0 +1,66 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ProductPriceService</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.golu.external.dataservices</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ProductPriceService (org.golu.external.dataservices)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ProductPriceService</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.golu.external.dataservices;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.golu.common.domain.ProductPrice;
+<i>4</i>&nbsp;import org.golu.external.exceptions.ResourceNotFoundException;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public interface ProductPriceService {
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;    /**
+<i>9</i>&nbsp;     * Returns a ProductPrice object that contains product&#39;s
+<i>10</i>&nbsp;     * price information. If the product is not found,
+<i>11</i>&nbsp;     * an exception will be thrown.
+<i>12</i>&nbsp;     *
+<i>13</i>&nbsp;     * @param  id an Integer number that is the id of the Product
+<i>14</i>&nbsp;     * @return ProductPrice for the given id
+<i>15</i>&nbsp;     * @throws ResourceNotFoundException if the id is not found
+<i>16</i>&nbsp;     */
+<i>17</i>&nbsp;    ProductPrice findProductPrice(Integer id);
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-17 00:25</div>
+</div>
+</body>
+</html>

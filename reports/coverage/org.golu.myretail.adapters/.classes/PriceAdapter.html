@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PriceAdapter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.golu.myretail.adapters</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PriceAdapter (org.golu.myretail.adapters)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PriceAdapter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/ 7)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.golu.myretail.adapters;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.apache.camel.Exchange;
+<i>4</i>&nbsp;import org.apache.camel.Processor;
+<i>5</i>&nbsp;import org.golu.common.domain.CurrentProductPriceQuote;
+<i>6</i>&nbsp;import org.golu.myretail.exceptions.IdMismatchException;
+<i>7</i>&nbsp;import org.springframework.stereotype.Component;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;@Component
+<b class="fc"><i>10</i>&nbsp;public class PriceAdapter implements Processor {</b>
+<i>11</i>&nbsp;    @Override
+<i>12</i>&nbsp;    public void process(Exchange exchange) throws Exception {
+<b class="fc"><i>13</i>&nbsp;        Integer id = exchange.getIn().getHeader(&quot;id&quot;, Integer.class);</b>
+<b class="fc"><i>14</i>&nbsp;        CurrentProductPriceQuote price = (CurrentProductPriceQuote)exchange.getIn().getBody();</b>
+<b class="fc"><i>15</i>&nbsp;        if(id.intValue() != price.getId().intValue())</b>
+<b class="fc"><i>16</i>&nbsp;            throw new IdMismatchException(String.format(&quot;Param ID of value %d does not match with ID %d of product payload&quot;, id, price.getId()));</b>
+<b class="fc"><i>17</i>&nbsp;        exchange.getIn().setBody(price.getCurrentPrice());</b>
+<b class="fc"><i>18</i>&nbsp;    }</b>
+<i>19</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-09-17 03:08</div>
+</div>
+</body>
+</html>
