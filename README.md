@@ -24,9 +24,9 @@ Apache Camel allows us to easily bake well-known EIPs into the design to address
 Domain concerns for both Product and Pricing have been subjected to careful thought.
 
 # Modules
-myretail - contains everything required for the main myRetail API
-external - mocked up external APIs backed by in-memory hosted data
-common - common data models and web configurations for use in both the myretail and external modules
+1. myretail - contains everything required for the main myRetail API
+2. external - mocked up external APIs backed by in-memory hosted data
+3. common - common data models and web configurations for use in both the myretail and external modules
 
 # Running myRetail
 1. Run application via gradle task `run`
