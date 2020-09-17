@@ -17,6 +17,7 @@ because the problem statement specifically mentions a datastore, the implementat
 5. JUnit 5
 6. Mockito
 7. Swagger UI
+8. Lombok
 
 # Design
 This application is built on Java SE 14 with Spring Boot and Apache Camel (both its REST and Java DSLs).
@@ -40,7 +41,7 @@ Swagger has been used for API documentation.  Endpoints can be accessed through 
 Coverage reports from running unit tests are available under the `reports` folder of this repo.
 
 # Areas of improvement
-1. Logging (usage, performance and error)
+1. Logging
 2. Better error handling and coverage of boundary conditions
 3. Integration testing for the Camel routes
 4. More unit test coverage; not just more but also meaningful coverage
