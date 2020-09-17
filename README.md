@@ -47,3 +47,4 @@ Coverage reports from running unit tests are available under the `reports` folde
 4. More unit test coverage; not just more but also meaningful coverage
 5. Resiliency can be improved by introducing patterns like circuit breaker and with use of libraries like Hystrix
 6. Code comments / self-documenting naming of components
+7. The root v1/products API to list all products have a scalability limitation when the data being returned is large. In that case, depending on whether we query external API or    myRetail's own "datastore", the publishing API will need to either have some contract built-in for pagination on sorted data and the sort attribute can be specified as a        request payload attribute.
